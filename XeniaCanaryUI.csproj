@@ -7,7 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-    <PackageIcon>XeniaCanaryIcon.png</PackageIcon>
+    <PackageIcon>XeniaCanary256.png</PackageIcon>
     <ApplicationIcon>bin\Debug\net8.0-windows\New folder\XeniaCanaryUI.ico</ApplicationIcon>
     <Title>Xenia Canary UI</Title>
     <Company>$(Authors)</Company>
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="bin\Debug\net8.0-windows\New folder\XeniaCanaryIcon.png">
+    <None Update="XeniaCanary256.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
