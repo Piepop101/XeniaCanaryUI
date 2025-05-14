@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <PackageIcon>XeniaCanary256.png</PackageIcon>
-    <ApplicationIcon>bin\Debug\net8.0-windows\New folder\XeniaCanaryUI.ico</ApplicationIcon>
+    <ApplicationIcon>XeniaCanaryUI.ico</ApplicationIcon>
     <Title>Xenia Canary UI</Title>
     <Company>$(Authors)</Company>
   </PropertyGroup>
@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="bin\Debug\net8.0-windows\New folder\XeniaCanaryUI.ico" />
+    <Content Include="XeniaCanaryUI.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,5 +31,13 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net8.0-windows\New folder\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="start cmd.exe /k &quot;echo dotnet publish -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true /p:DebugSymbols=false /p:IncludeNativeLibrariesForSelfExtract=false&quot;&#xD;&#xA;start explorer &quot;D:\C# Scripts\XeniaCanaryUI\bin\Release\net8.0-windows\win-x64\publish&quot;" />
+  </Target>
 
 </Project>
